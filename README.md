@@ -49,35 +49,58 @@ This project is a Qt-QML starter kit designed to build scalable and maintainable
 ```plaintext
 project-root/
 ├── app/
-│   ├── core/
-│   │   ├── dto/               # Data Transfer Objects
-│   │   ├── models/            # Business models
-│   │   ├── services/          # Core services (DB, communication, etc.)
-│   │   ├── plugins/           # Backend plugins
-│   │   ├── pipelines/         # Data pipelines
-│   │   ├── task_manager/      # Background task services
-│   │   └── utils/             # Utility functions
-│   ├── ui/
-│   │   ├── components/        # Custom UI components
-│   │   ├── themes/            # Theme engine and files
-│   │   ├── views/             # QML views
-│   │   ├── controllers/       # Controllers handling UI logic
-│   │   └── plugins/           # UI plugins
-│   ├── bindings/              # QML-backend binding services
-│   ├── settings/              # QSettings configurations
-│   ├── communication/
-│   │   ├── mqtt/              # MQTT service
-│   │   ├── rabbitmq/          # RabbitMQ service
-│   │   ├── kafka/             # Kafka streaming
-│   │   ├── rest/              # REST API service
-│   │   ├── socket_io/         # Socket.IO service
-│   │   └── qremote/           # QRemoteObject services
-│   └── network/               # Network manager
-├── tests/                     # Unit and integration tests
-├── docs/                      # Documentation
-├── scripts/                   # Helper scripts
-├── CMakeLists.txt             # Build configuration
-└── README.md                  # Project description and setup instructions
+│   ├── core/                   # Core business logic (Hexagonal Architecture)
+│   │   ├── domain/             # Domain layer (Entities, Aggregates, DTOs)
+│   │   │   ├── entities/       # Core business entities
+│   │   │   ├── modules/        # Value objects
+│   │   │   ├── dtos/           # Data Transfer Objects (DTOs)
+│   │   ├── application/        # Application layer (Use cases, Services)
+│   │   │   ├── logics/         # Business logic operations
+│   │   │   ├── services/       # Core services (DB, communication, etc.)
+│   │   │   ├── events/         # Event-driven architecture
+│   │   ├── infrastructure/     # Infrastructure layer (External dependencies)
+│   │   │   ├── database/       # Database management (PostgreSQL, Time-series DB)
+│   │   │   ├── bindings/       # Messaging brokers , Qt-Qml realtime bindings (RabbitMQ, socketio , ...)
+│   │   │   ├── logging/        # Logging and monitoring services
+│   │   ├── plugins/            # Plugin system (Backend)
+│   │   ├── pipelines/          # Data processing pipelines
+│   │   ├── task_manager/       # Background task handling
+│   │   ├── configs/            # Configuration files (e.g., QSettings, JSON, YAML)
+│   │   ├── utils/              # Utility functions
+│   ├── ui/                     # UI Layer (Presentation)
+│   │   ├── components/         # Custom reusable UI components
+│   │   ├── themes/             # Theming engine and styles
+│   │   ├── views/              # QML views
+│   │   ├── controllers/        # UI controllers handling logic
+│   │   ├── plugins/            # UI plugins for extensions
+│   │   ├── templates/          # UI templates for app
+│   ├── bindings/               # QML-backend data binding
+│   ├── settings/               # Application settings and configuration
+│   ├── communication/          # Communication Layer
+│   │   ├── services/           # Core communication services
+│   │   │   ├── messages/       # Message queue services (RabbitMQ, MQTT)
+│   │   │   ├── api_gateway/    # API service handling external communication
+│   │   │   ├── datasources/    # External data sources (Remote APIs, QRemoteObject)
+│   │   │   ├── events/         # Event-driven service
+│   │   │   ├── socket_io/      # WebSocket services
+│   │   ├── connectors/         # Low-level network connectors and drivers
+│   │   │   ├── mqtt/           # MQTT service
+│   │   │   ├── rabbitmq/       # RabbitMQ service
+│   │   │   ├── rest/           # REST API connectors
+│   │   │   ├── socket/         # Socket.IO low-level handlers
+│   │   │   ├── qremote/        # QRemoteObject connectors
+│   │   ├── configs/            # Configuration files for communication services
+│   └── network/                # Network management
+├── common/                     # Common shared resources
+│   ├── types/                  # Global type definitions (structs, enums, interfaces)
+│   ├── modules/                # Reusable modules across the app
+│   ├── properties/             # Shared class properties and constants
+├── tests/                      # Unit and integration tests
+├── docs/                       # Documentation
+├── scripts/                    # Helper scripts
+├── CMakeLists.txt              # Build configuration
+└── README.md                   # Project description and setup instructions
+
 ```
 
 ---
@@ -204,5 +227,5 @@ This project is licensed under the MIT License. See `LICENSE` for more details.
 ---
 
 ## Contact
-For questions or support, feel free to contact the project maintainer at [email@example.com].
+For questions or support, feel free to contact the project maintainer at [amirtaherkhani@outlook.com], [masiha98@yahoo.com] .
 
